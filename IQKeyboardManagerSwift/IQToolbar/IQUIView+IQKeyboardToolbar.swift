@@ -448,6 +448,10 @@ UIView category methods to add IQToolbar on UIKeyboard.
                     toolbar.doneBarButton = done
                 }
                 
+                if let accessibilityLabel = rightConfig.accessibilityLabel {
+                    done.accessibilityLabel = rightConfig.accessibilityLabel
+                }
+                
                 items.append(done)
             }
             

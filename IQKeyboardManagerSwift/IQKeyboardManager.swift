@@ -290,6 +290,7 @@ Codeless drop-in universal library allows to prevent issues of keyboard sliding 
     @objc public var toolbarPreviousBarButtonItemText: String?
     @objc public var toolbarNextBarButtonItemText: String?
     @objc public var toolbarDoneBarButtonItemText: String?
+    @objc public var toolbarDoneBarButtonItemAccessibilityLabel: String?
 
     /**
     If YES, then it add the textField's placeholder text on IQToolbar. Default is YES.
@@ -1961,6 +1962,7 @@ Codeless drop-in universal library allows to prevent issues of keyboard sliding 
                             rightConfiguration = IQBarButtonItemConfiguration(image: doneBarButtonItemImage, action: #selector(self.doneAction(_:)))
                         } else if let doneBarButtonItemText = toolbarDoneBarButtonItemText {
                             rightConfiguration = IQBarButtonItemConfiguration(title: doneBarButtonItemText, action: #selector(self.doneAction(_:)))
+                            rightConfiguration.accessibilityLabel = toolbarDoneBarButtonItemAccessibilityLabel
                         } else {
                             rightConfiguration = IQBarButtonItemConfiguration(barButtonSystemItem: .done, action: #selector(self.doneAction(_:)))
                         }
